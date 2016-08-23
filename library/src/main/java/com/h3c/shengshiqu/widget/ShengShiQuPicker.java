@@ -166,12 +166,12 @@ public class ShengShiQuPicker extends LinearLayout {
         };
     }
 
-    public String getResult() {
-        StringBuffer sb = new StringBuffer();
+    public String[] getResult() {
+        String[] result = new String[3];
         String provinceStr = null;
         if(mProvinceData != null && mCurrentProvinceIndex < mProvinceData.length) {
             provinceStr = mProvinceData[mCurrentProvinceIndex];
-            sb.append(provinceStr);
+            result[0] = provinceStr;
         }
 
         String cityStr = null;
@@ -179,7 +179,7 @@ public class ShengShiQuPicker extends LinearLayout {
             String[] citiesData = mCitiesData.get(provinceStr);
             if(citiesData != null && mCurrentCityIndex < citiesData.length) {
                 cityStr = citiesData[mCurrentCityIndex];
-                sb.append(cityStr);
+                result[1] = cityStr;
             }
         }
 
@@ -188,10 +188,58 @@ public class ShengShiQuPicker extends LinearLayout {
             String[] districtsData = mDistrictData.get(cityStr);
             if(districtsData != null && mCurrentDistrictIndex < districtsData.length) {
                 districtStr = districtsData[mCurrentDistrictIndex];
-                sb.append(districtStr);
+                result[2] = districtStr;
             }
         }
 
-        return sb.toString();
+        return result;
+    }
+
+    public void setData(final String[] inputData) {
+        if(inputData == null || inputData.length != 3) return;
+
+        Integer tmpProvinceIndex = null;
+        Integer tmpCityIndex = null;
+        Integer tmpDistrictIndex = null;
+
+        if(mProvinceData != null) {
+            for (int n = 0; n < mProvinceData.length; n++) {
+                if(mProvinceData[n].equals(inputData[0])) {
+                    tmpProvinceIndex = n;
+                    String[] citiesData = mCitiesData.get(inputData[0]);
+
+                    if(citiesData != null && citiesData.length > 0) {
+                        for (int i = 0; i < citiesData.length; i++) {
+                            if(citiesData[i].equals(inputData[1])) {
+                                tmpCityIndex = i;
+
+                                String[] districtsData = mDistrictData.get(inputData[1]);
+                                if(districtsData != null && districtsData.length > 0) {
+                                    for (int j = 0; j < districtsData.length; j++) {
+                                        if(districtsData[j].equals(inputData[2])) {
+                                            tmpDistrictIndex = j;
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        if(tmpProvinceIndex == null || tmpCityIndex == null || tmpDistrictIndex == null) return;
+
+        mCurrentProvinceIndex = tmpProvinceIndex;
+        shengPicker.setValue(mCurrentProvinceIndex);
+        refreshCitiesPicker(mCurrentProvinceIndex);
+        mCurrentCityIndex = tmpCityIndex;
+        shiPicker.setValue(mCurrentCityIndex);
+        refreshDistrictPicker(mCurrentCityIndex);
+        mCurrentDistrictIndex = tmpDistrictIndex;
+        quPicker.setValue(mCurrentDistrictIndex);
     }
 }

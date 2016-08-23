@@ -17,6 +17,7 @@ import com.h3c.shengshiqu.widget.ShengShiQuPicker;
 
 public class ShengShiQuDialog extends DialogFragment implements View.OnClickListener {
     public ShengShiQuPicker picker;
+    private String[] mData;
 
     @Nullable
     @Override
@@ -37,6 +38,7 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
         view.findViewById(R.id.dialog_SSQ_doneBtn).setOnClickListener(this);
         view.findViewById(R.id.dialog_SSQ_cancelBtn).setOnClickListener(this);
         picker = (ShengShiQuPicker) view.findViewById(R.id.dialog_SSQPicker);
+        picker.setData(mData);
     }
 
     @Override
@@ -58,9 +60,9 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
     public void onClick(View view) {
         int i = view.getId();
         if (i == R.id.dialog_SSQ_doneBtn) {
-            String result = picker.getResult();
+            String[] result = picker.getResult();
             if(mListener != null) {
-                mListener.onSSQDialogResult(result);
+                mListener.onSSQDialogResult(result[0], result[1], result[2]);
             }
         }
 
@@ -71,7 +73,12 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
     public void setDataResultListener(ShengShiQuDialogListener l) {
         this.mListener = l;
     }
+
+    public void setData(String[] data) {
+        mData = data;
+    }
+
     public interface ShengShiQuDialogListener {
-        void onSSQDialogResult(String result);
+        void onSSQDialogResult(String province, String city, String district);
     }
 }
