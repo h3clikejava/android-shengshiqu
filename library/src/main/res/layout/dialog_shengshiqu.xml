@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <com.h3c.shengshiqu.widget.ShengShiQuPicker
+        android:id="@+id/dialog_SSQPicker"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/dialog_SSQ_cancelBtn"
+            android:gravity="center"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/ssq_cancel"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/dialog_SSQ_doneBtn"
+            android:textColor="@android:color/holo_red_dark"
+            android:gravity="center"
+            android:text="@string/ssq_ok"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

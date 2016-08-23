@@ -1,6 +1,7 @@
 package com.h3c.shengshiqu.widget;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
@@ -64,17 +65,17 @@ public class ShengShiQuPicker extends LinearLayout {
 
     // 省Picker
     public NumberPicker findShengPicker() {
-        return (NumberPicker) findViewById(R.id.shengPicker);
+        return (NumberPicker) findViewById(R.id.ssq_shengPicker);
     }
 
     // 市Picker
     public NumberPicker findShiPicker() {
-        return (NumberPicker) findViewById(R.id.shiPicker);
+        return (NumberPicker) findViewById(R.id.ssq_shiPicker);
     }
 
     // 区Picker
     public NumberPicker findQuPicker() {
-        return (NumberPicker) findViewById(R.id.quPicker);
+        return (NumberPicker) findViewById(R.id.ssq_quPicker);
     }
 
     private void loadData() {
@@ -155,4 +156,32 @@ public class ShengShiQuPicker extends LinearLayout {
         };
     }
 
+    public String getResult() {
+        StringBuffer sb = new StringBuffer();
+        String provinceStr = null;
+        if(mProvinceData != null && mCurrentProvinceIndex < mProvinceData.length) {
+            provinceStr = mProvinceData[mCurrentProvinceIndex];
+            sb.append(provinceStr);
+        }
+
+        String cityStr = null;
+        if(mCitiesData != null && !TextUtils.isEmpty(provinceStr)) {
+            String[] citiesData = mCitiesData.get(provinceStr);
+            if(citiesData != null && mCurrentCityIndex < citiesData.length) {
+                cityStr = citiesData[mCurrentCityIndex];
+                sb.append(cityStr);
+            }
+        }
+
+        String districtStr = null;
+        if(mDistrictData != null && !TextUtils.isEmpty(cityStr)) {
+            String[] districtsData = mDistrictData.get(cityStr);
+            if(districtsData != null && mCurrentDistrictIndex < districtsData.length) {
+                districtStr = districtsData[mCurrentDistrictIndex];
+                sb.append(districtStr);
+            }
+        }
+
+        return sb.toString();
+    }
 }

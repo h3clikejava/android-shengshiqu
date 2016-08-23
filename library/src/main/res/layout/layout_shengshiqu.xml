@@ -6,7 +6,7 @@
               android:layout_height="140dp">
 
     <com.h3c.shengshiqu.widget.SSQCustomPicker
-        android:id="@+id/shengPicker"
+        android:id="@+id/ssq_shengPicker"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content" />
 
     <com.h3c.shengshiqu.widget.SSQCustomPicker
-        android:id="@+id/shiPicker"
+        android:id="@+id/ssq_shiPicker"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content" />
 
     <com.h3c.shengshiqu.widget.SSQCustomPicker
-        android:id="@+id/quPicker"
+        android:id="@+id/ssq_quPicker"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
