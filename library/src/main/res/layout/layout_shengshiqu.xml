@@ -12,7 +12,7 @@
         android:layout_height="wrap_content" />
 
     <View
-        android:layout_width="15dp"
+        android:layout_width="5dp"
         android:layout_height="wrap_content" />
 
     <com.h3c.shengshiqu.widget.SSQCustomPicker
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content" />
 
     <View
-        android:layout_width="15dp"
+        android:layout_width="5dp"
         android:layout_height="wrap_content" />
 
     <com.h3c.shengshiqu.widget.SSQCustomPicker

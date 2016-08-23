@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.LinearLayout;
 
 import com.h3c.shengshiqu.widget.ShengShiQuPicker;
 
@@ -38,14 +39,20 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
         picker = (ShengShiQuPicker) view.findViewById(R.id.dialog_SSQPicker);
     }
 
-//    @Override
-//    public void onResume() {
-//        ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
-//        params.width = LinearLayout.LayoutParams.MATCH_PARENT;
-//        getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
-//
-//        super.onResume();
-//    }
+    @Override
+    public void onResume() {
+        if(isMatchParentWidth()) {
+            ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
+            params.width = LinearLayout.LayoutParams.MATCH_PARENT;
+            getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
+        }
+
+        super.onResume();
+    }
+
+    public boolean isMatchParentWidth() {
+        return true;
+    }
 
     @Override
     public void onClick(View view) {
