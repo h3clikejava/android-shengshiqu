@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.LinearLayout;
 
 import com.h3c.shengshiqu.widget.ShengShiQuPicker;
 
@@ -16,12 +15,12 @@ import com.h3c.shengshiqu.widget.ShengShiQuPicker;
  */
 
 public class ShengShiQuDialog extends DialogFragment implements View.OnClickListener {
-    private ShengShiQuPicker picker;
+    public ShengShiQuPicker picker;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.dialog_shengshiqu, null);
+        View view = inflater.inflate(inflateLayout(), null);
         initView(view);
 
         // 去掉系统默认的一个主题样式Title
@@ -29,21 +28,24 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
         return view;
     }
 
-    private void initView(View view) {
+    public int inflateLayout() {
+        return R.layout.dialog_shengshiqu;
+    }
+
+    public void initView(View view) {
         view.findViewById(R.id.dialog_SSQ_doneBtn).setOnClickListener(this);
         view.findViewById(R.id.dialog_SSQ_cancelBtn).setOnClickListener(this);
-
         picker = (ShengShiQuPicker) view.findViewById(R.id.dialog_SSQPicker);
     }
 
-    @Override
-    public void onResume() {
-        ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
-        params.width = LinearLayout.LayoutParams.MATCH_PARENT;
-        getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
-
-        super.onResume();
-    }
+//    @Override
+//    public void onResume() {
+//        ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
+//        params.width = LinearLayout.LayoutParams.MATCH_PARENT;
+//        getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
+//
+//        super.onResume();
+//    }
 
     @Override
     public void onClick(View view) {

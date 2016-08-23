@@ -1,7 +1,6 @@
 package com.h3c.shengshiqu.widget;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -52,7 +51,7 @@ public class SSQCustomPicker extends NumberPicker {
     public void updateView(View view) {
         if (view instanceof EditText) {
             //这里修改字体的属性
-            ((EditText) view).setTextColor(Color.parseColor("#464A4C"));
+//            ((EditText) view).setTextColor(Color.parseColor("#464A4C"));
             ((EditText) view).setTextSize(12);
         }
     }
@@ -61,18 +60,26 @@ public class SSQCustomPicker extends NumberPicker {
     public void setDisplayedValues(String[] displayedValues) {
         super.setDisplayedValues(displayedValues);
 
-        Field[] pickerFields = NumberPicker.class.getDeclaredFields();
-        for (Field pf : pickerFields) {
-            if (pf.getName().equals("mSelectionDivider")) {
-                pf.setAccessible(true);
-                try {
-                    //设置分割线的颜色值
-                    pf.set(this, new ColorDrawable(Color.parseColor("#F8A441")));
-                } catch (Exception e) {
-                    e.printStackTrace();
+        int customDividerColor = customDividerColor();
+        if(customDividerColor != 0) {
+            Field[] pickerFields = NumberPicker.class.getDeclaredFields();
+            for (Field pf : pickerFields) {
+                if (pf.getName().equals("mSelectionDivider")) {
+                    pf.setAccessible(true);
+                    try {
+                        //设置分割线的颜色值
+                        pf.set(this, new ColorDrawable(customDividerColor));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 }
-                break;
             }
         }
+    }
+
+    // 自定义分割线的颜色
+    public int customDividerColor() {
+        return 0;
     }
 }
