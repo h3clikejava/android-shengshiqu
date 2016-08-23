@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.h3c.shenshiqu.SSQCustomPicker
+        android:id="@+id/shengPicker"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="wrap_content" />
+
+    <com.h3c.shenshiqu.SSQCustomPicker
+        android:id="@+id/shiPicker"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="wrap_content" />
+
+    <com.h3c.shenshiqu.SSQCustomPicker
+        android:id="@+id/quPicker"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>
