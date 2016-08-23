@@ -54,6 +54,7 @@ public class ShengShiQuPicker extends LinearLayout {
 
         shengPicker.setOnValueChangedListener(getShengPickerChangeListener());
         shiPicker.setOnValueChangedListener(getShiPickerChangeListener());
+        quPicker.setOnValueChangedListener(getQuPickerChangeListener());
 
         loadData();
     }
@@ -138,7 +139,7 @@ public class ShengShiQuPicker extends LinearLayout {
         }
     }
 
-    public NumberPicker.OnValueChangeListener getShengPickerChangeListener() {
+    private NumberPicker.OnValueChangeListener getShengPickerChangeListener() {
         return new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int from, int to) {
@@ -147,11 +148,20 @@ public class ShengShiQuPicker extends LinearLayout {
         };
     }
 
-    public NumberPicker.OnValueChangeListener getShiPickerChangeListener() {
+    private NumberPicker.OnValueChangeListener getShiPickerChangeListener() {
         return new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int from, int to) {
                 refreshDistrictPicker(to);
+            }
+        };
+    }
+
+    private NumberPicker.OnValueChangeListener getQuPickerChangeListener() {
+        return new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int from, int to) {
+                mCurrentDistrictIndex = to;
             }
         };
     }
