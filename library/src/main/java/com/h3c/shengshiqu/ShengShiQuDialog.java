@@ -17,7 +17,7 @@ import com.h3c.shengshiqu.widget.ShengShiQuPicker;
 
 public class ShengShiQuDialog extends DialogFragment implements View.OnClickListener {
     public ShengShiQuPicker picker;
-    private String[] mData;
+    public String[] mData;
 
     @Nullable
     @Override
@@ -76,6 +76,9 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
 
     public void setData(String[] data) {
         mData = data;
+        if(picker != null) {
+            picker.setData(mData);
+        }
     }
 
     public interface ShengShiQuDialogListener {
