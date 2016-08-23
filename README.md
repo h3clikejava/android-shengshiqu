@@ -17,7 +17,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-    compile 'com.github.h3clikejava:android-shengshiqu:v0.9'
+    compile 'com.github.h3clikejava:android-shengshiqu:v1.0'
 }
 ```
 	
