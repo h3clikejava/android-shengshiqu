@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:background="#E5EAE1"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
@@ -16,7 +17,7 @@
         <TextView
             android:id="@+id/dialog_SSQ_cancelBtn"
             android:gravity="center"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#CDC8A9"
             android:text="@string/ssq_cancel"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -24,7 +25,7 @@
 
         <TextView
             android:id="@+id/dialog_SSQ_doneBtn"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="#CB7F2E"
             android:gravity="center"
             android:text="@string/ssq_ok"
             android:layout_weight="1"

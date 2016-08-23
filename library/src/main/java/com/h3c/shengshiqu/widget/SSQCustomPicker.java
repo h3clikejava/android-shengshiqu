@@ -52,7 +52,7 @@ public class SSQCustomPicker extends NumberPicker {
     public void updateView(View view) {
         if (view instanceof EditText) {
             //这里修改字体的属性
-            ((EditText) view).setTextColor(Color.RED);
+            ((EditText) view).setTextColor(Color.parseColor("#464A4C"));
             ((EditText) view).setTextSize(12);
         }
     }
@@ -67,7 +67,7 @@ public class SSQCustomPicker extends NumberPicker {
                 pf.setAccessible(true);
                 try {
                     //设置分割线的颜色值
-                    pf.set(this, new ColorDrawable(Color.BLACK));
+                    pf.set(this, new ColorDrawable(Color.parseColor("#F8A441")));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
