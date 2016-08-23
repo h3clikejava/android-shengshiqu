@@ -1,12 +1,12 @@
-package com.h3c.shenshiqu.helper;
+package com.h3c.shengshiqu.helper;
 
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 
-import com.h3c.shenshiqu.models.CityModel;
-import com.h3c.shenshiqu.models.DistrictModel;
-import com.h3c.shenshiqu.models.ProvinceModel;
+import com.h3c.shengshiqu.models.CityModel;
+import com.h3c.shengshiqu.models.DistrictModel;
+import com.h3c.shengshiqu.models.ProvinceModel;
 
 import java.io.IOException;
 import java.io.InputStream;

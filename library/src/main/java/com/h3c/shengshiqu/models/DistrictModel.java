@@ -1,4 +1,4 @@
-package com.h3c.shenshiqu.models;
+package com.h3c.shengshiqu.models;
 
 public class DistrictModel {
 	private String name;

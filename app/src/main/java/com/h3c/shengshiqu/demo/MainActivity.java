@@ -3,7 +3,7 @@ package com.h3c.shengshiqu.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.h3c.shenshiqu.ShengShiQuPicker;
+import com.h3c.shengshiqu.widget.ShengShiQuPicker;
 
 public class MainActivity extends AppCompatActivity {
 

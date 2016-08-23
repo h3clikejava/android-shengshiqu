@@ -14,7 +14,14 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
-    <com.h3c.shenshiqu.ShengShiQuPicker
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/dialog"
+        android:text="Dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.h3c.shengshiqu.widget.ShengShiQuPicker
         android:id="@+id/shengshiquPicker"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"

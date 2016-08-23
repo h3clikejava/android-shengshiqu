@@ -1,4 +1,4 @@
-package com.h3c.shenshiqu;
+package com.h3c.shengshiqu.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 
-import com.h3c.shenshiqu.helper.ProvinceDataLoader;
+import com.h3c.shengshiqu.R;
+import com.h3c.shengshiqu.helper.ProvinceDataLoader;
 
 import java.util.Map;
 

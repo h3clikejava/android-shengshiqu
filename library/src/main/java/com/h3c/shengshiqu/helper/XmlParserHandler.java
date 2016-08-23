@@ -1,8 +1,8 @@
-package com.h3c.shenshiqu.helper;
+package com.h3c.shengshiqu.helper;
 
-import com.h3c.shenshiqu.models.CityModel;
-import com.h3c.shenshiqu.models.DistrictModel;
-import com.h3c.shenshiqu.models.ProvinceModel;
+import com.h3c.shengshiqu.models.CityModel;
+import com.h3c.shengshiqu.models.DistrictModel;
+import com.h3c.shengshiqu.models.ProvinceModel;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

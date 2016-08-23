@@ -1,4 +1,4 @@
-package com.h3c.shenshiqu;
+package com.h3c.shengshiqu.widget;
 
 import android.content.Context;
 import android.graphics.Color;
