@@ -60,7 +60,7 @@ public class ShengShiQuDialog extends DialogFragment implements View.OnClickList
         dismiss();
     }
 
-    private ShengShiQuDialogListener mListener;
+    public ShengShiQuDialogListener mListener;
     public void setDataResultListener(ShengShiQuDialogListener l) {
         this.mListener = l;
     }
