@@ -1,6 +1,7 @@
 package com.h3c.shengshiqu.widget;
 
 import android.content.Context;
+import android.support.annotation.ColorInt;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -18,6 +19,10 @@ import java.util.Map;
  */
 
 public class ShengShiQuPicker extends LinearLayout {
+    protected static @ColorInt Integer PICKER_TEXT_COLOR = 0;
+    protected static Integer PICKER_TEXT_SIZE = 0;
+    protected static @ColorInt Integer PICKER_DIVIDER_COLOR = 0;
+
     private final int DEFAULT_LAYOUT = R.layout.layout_shengshiqu;
     private NumberPicker shengPicker;
     private NumberPicker shiPicker;
@@ -29,6 +34,14 @@ public class ShengShiQuPicker extends LinearLayout {
     private int mCurrentProvinceIndex;
     private int mCurrentCityIndex;
     private int mCurrentDistrictIndex;
+
+    // 初始化SSQPicker的样式,一定要在Application中初始化,否则会失效
+    public static void initSSQPikcerColorInApplication(
+            @ColorInt Integer textColor, Integer textSize, @ColorInt Integer dividerColor) {
+        PICKER_TEXT_COLOR = textColor;
+        PICKER_TEXT_SIZE = textSize;
+        PICKER_DIVIDER_COLOR = dividerColor;
+    }
 
     public ShengShiQuPicker(Context context) {
         super(context);
@@ -98,8 +111,8 @@ public class ShengShiQuPicker extends LinearLayout {
     }
 
     public void setPickerData(String[] provinceData,
-                          Map<String, String[]> citiesData,
-                          Map<String, String[]> districtData) {
+                              Map<String, String[]> citiesData,
+                              Map<String, String[]> districtData) {
         mProvinceData = provinceData;
         mCitiesData = citiesData;
         mDistrictData = districtData;
