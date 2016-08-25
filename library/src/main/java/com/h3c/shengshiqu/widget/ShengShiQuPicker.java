@@ -19,9 +19,9 @@ import java.util.Map;
 
 public class ShengShiQuPicker extends LinearLayout {
     private final int DEFAULT_LAYOUT = R.layout.layout_shengshiqu;
-    private NumberPicker shengPicker;
-    private NumberPicker shiPicker;
-    private NumberPicker quPicker;
+    private SSQCustomPicker shengPicker;
+    private SSQCustomPicker shiPicker;
+    private SSQCustomPicker quPicker;
 
     private String[] mProvinceData;
     private Map<String, String[]> mCitiesData;
@@ -65,18 +65,18 @@ public class ShengShiQuPicker extends LinearLayout {
     }
 
     // 省Picker
-    public NumberPicker findShengPicker() {
-        return (NumberPicker) findViewById(R.id.ssq_shengPicker);
+    public SSQCustomPicker findShengPicker() {
+        return (SSQCustomPicker) findViewById(R.id.ssq_shengPicker);
     }
 
     // 市Picker
-    public NumberPicker findShiPicker() {
-        return (NumberPicker) findViewById(R.id.ssq_shiPicker);
+    public SSQCustomPicker findShiPicker() {
+        return (SSQCustomPicker) findViewById(R.id.ssq_shiPicker);
     }
 
     // 区Picker
-    public NumberPicker findQuPicker() {
-        return (NumberPicker) findViewById(R.id.ssq_quPicker);
+    public SSQCustomPicker findQuPicker() {
+        return (SSQCustomPicker) findViewById(R.id.ssq_quPicker);
     }
 
     private void loadData() {
