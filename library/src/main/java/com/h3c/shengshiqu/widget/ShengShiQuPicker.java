@@ -88,18 +88,24 @@ public class ShengShiQuPicker extends LinearLayout {
                             String[] provinceData,
                             Map<String, String[]> citiesData,
                             Map<String, String[]> districtData) {
-                        mProvinceData = provinceData;
-                        mCitiesData = citiesData;
-                        mDistrictData = districtData;
-
-                        initPickerData(shengPicker, provinceData);
-                        refreshCitiesPicker(0);
+                        setPickerData(provinceData, citiesData, districtData);
                     }
 
                     @Override
                     public void provinceDataLoaderError() {
                     }
                 });
+    }
+
+    public void setPickerData(String[] provinceData,
+                          Map<String, String[]> citiesData,
+                          Map<String, String[]> districtData) {
+        mProvinceData = provinceData;
+        mCitiesData = citiesData;
+        mDistrictData = districtData;
+
+        initPickerData(shengPicker, provinceData);
+        refreshCitiesPicker(0);
     }
 
     private void initPickerData(NumberPicker picker, String[] data) {
